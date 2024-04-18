@@ -4,7 +4,7 @@ USER=$(id -u)
 R="\e[31m"
 Y="\e[32m"
 B="\e[36m"
-SCRIPTNAME=$(echo $0 | CUT -d "." -f1)
+SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$SCRIPTNAME-$TIMESTAMP.log
 if [ $USER -ne 0 ]
