@@ -12,7 +12,7 @@ then
   echo "you are not super user"
   exit 1
 else
-  echo "you are super user, $B you can proceed"
+  echo "you are super user, $y you can proceed"
 fi
 
 VALIDATE()
