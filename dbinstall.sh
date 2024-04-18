@@ -12,17 +12,17 @@ then
   echo "you are not super user"
   exit 1
 else
-  echo "you are super user, $y you can proceed"
+  echo -e "you are super user, $y you can proceed"
 fi
 
 VALIDATE()
 {
     if [ $1 -ne 0]
     then 
-      echo "$2 ...$Rfailure"
+      echo -e "$2 ...$Rfailure"
       exit 1
     else
-      echo "$2 ... $G success"
+      echo -e "$2 ... $G success"
     fi 
       
 }
