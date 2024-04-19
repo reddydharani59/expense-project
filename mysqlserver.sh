@@ -10,7 +10,7 @@ y="/e[32m"
 B="/e[33m"
 if [ $USER ne 0]
 then 
-echo -e " $R Get super user access"
+echo -e "$R Get super user access"
 else 
 echo -e "$Y you are super user proceed"
 VALIDATE()
