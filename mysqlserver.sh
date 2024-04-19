@@ -13,6 +13,7 @@ then
 echo -e "$R Get super user access"
 else 
 echo -e "$Y you are super user proceed"
+fi
 VALIDATE()
 {
     if [ $1 eq 0 ]
