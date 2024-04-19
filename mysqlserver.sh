@@ -31,9 +31,10 @@ systemctl enable mysqld &>>$LOGFILE
 VALIDATE $? "enabling mysql-server "
 
 mysql-h db.daws-78s.site -uroot -p${mysql-passwd} &>>$LOGFILE
-if [ $? ne 0 ]
+ if [ $? ne 0 ]
 then 
      mysql_secure_installation --set-root-pass ${mysql-passwd} &>>$LOGFILE
+     VALIDATE $? "Setting up password"
  else
-     echo -e "Already you set mysql password  read to go"
+     echo  Already you set mysql password read to go
  fi
