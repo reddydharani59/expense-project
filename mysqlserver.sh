@@ -1,26 +1,28 @@
 #!/bin/bash
 USER=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-SCRIPTNAME=$(echo $? | cut -d ".' -f1)
+SCRIPTNAME=$(echo $0 | cut -d ".' -f1)
 LOGFILE=/tmp/$SCRIPTNAME.$TIMESTAMP.log
 echo "enter mysql-password"
 read -s mysql_root_password
-R="/e[31m"
-y="/e[32m"
-B="/e[33m"
-if [ $USER ne 0 ]
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+if [ $USER -ne 0 ]
 then 
 echo -e "$R Get super user access"
+   exit 1
 else 
 echo -e "$Y you are super user proceed"
 fi
 VALIDATE(){
 
-    if [ $1 eq 0 ]
+    if [ $1 -eq 0 ]
     then
-      echo -e "$2 .....is $B success"
+      echo -e "$2 .....is $Y success"
     else 
       echo -e "$2 ....$R is failure"
+      exit 1
     fi
 
 }
