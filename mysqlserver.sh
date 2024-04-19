@@ -34,4 +34,6 @@ mysql-h db.daws-78s.site -uroot -p${mysql-passsword} &>>$LOGFILE
 if [ $? ne 0]
 then 
  mysql_secure_installation --set-root-pass ${mysql-password} &>>$LOGFILE
+ else
+ echo -e " Already you set mysql password $Y read to go "
  fi
