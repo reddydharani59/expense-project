@@ -8,7 +8,7 @@ read -s mysql_root_password
 R="/e[31m"
 y="/e[32m"
 B="/e[33m"
-if [ $USER ne 0]
+if [ $USER ne 0 ]
 then 
 echo -e "$R Get super user access"
 else 
