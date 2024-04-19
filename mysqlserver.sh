@@ -36,5 +36,5 @@ then
      mysql_secure_installation --set-root-pass ${mysql-passwd} &>>$LOGFILE
      VALIDATE $? "Setting up password"
  else
-     echo  Already you set mysql password read to go
+     echo "Already you set mysql password read to go"
  fi
