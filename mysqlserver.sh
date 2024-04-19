@@ -6,7 +6,7 @@ LOGFILE=/tmp/$SCRIPTNAME.$TIMESTAMP.log
 echo "enter mysql-password"
 read -s mysql-passwd
 R="/e[31m"
-y="e[32m"
+y="/e[32m"
 B="/e[33m"
 if [ $USER ne 0]
 then 
