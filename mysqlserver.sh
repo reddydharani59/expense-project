@@ -14,8 +14,8 @@ echo -e "$R Get super user access"
 else 
 echo -e "$Y you are super user proceed"
 fi
-VALIDATE()
-{
+VALIDATE(){
+
     if [ $1 eq 0 ]
     then
       echo -e "$2 .....is $B success"
