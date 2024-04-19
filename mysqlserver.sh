@@ -4,7 +4,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPTNAME=$(echo $? | cut -d ".' -f1)
 LOGFILE=/tmp/$SCRIPTNAME.$TIMESTAMP.log
 echo "enter mysql-password"
-read -s mysql_passwd
+read -s mysql-passwd
 R="/e[31m"
 y="e[32m"
 B="/e[33m"
@@ -30,10 +30,10 @@ VALIDATE $? "starting mysql-server"
 systemctl enable mysqld &>>$LOGFILE
 VALIDATE $? "enabling mysql-server "
 
-mysql-h db.daws-78s.site -uroot -p${mysql-passsword} &>>$LOGFILE
+mysql-h db.daws-78s.site -uroot -p${mysql-passwd} &>>$LOGFILE
 if [ $? ne 0 ]
 then 
-     mysql_secure_installation --set-root-pass ${mysql-password} &>>$LOGFILE
+     mysql_secure_installation --set-root-pass ${mysql-passwd} &>>$LOGFILE
  else
      echo -e " Already you set mysql password $Y read to go "
  fi
