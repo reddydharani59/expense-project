@@ -35,5 +35,5 @@ if [ $? ne 0 ]
 then 
      mysql_secure_installation --set-root-pass ${mysql-passwd} &>>$LOGFILE
  else
-     echo -e "Already you set mysql password $Y read to go"
+     echo -e "Already you set mysql password  read to go"
  fi
