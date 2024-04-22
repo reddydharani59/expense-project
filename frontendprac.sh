@@ -1,0 +1,51 @@
+#!/bin/bash
+USER=${id -u}
+TIMESTAMP=${DATE +%F-%H-%M-%S}
+SRIPTNAME=${echo $0 |cut -d "." -f1}
+LOGFILE=TIMESTAMP.SCRIPTNAME.log
+R="\e[31m"
+Y="\e[32m"
+B="\e[34m"
+D="\e[90m"
+
+if [ id -ne 0 ]
+then
+    echo -e "$y get super user access"
+else 
+    echo -e "$B you are super user proceed"
+fi
+
+VALIDATE(){
+    if [ $1 ne 0 ]
+    then    
+        echo -e "$R failed"
+    else
+      echo -e ".....$D success"
+    fi
+}
+
+dnf install nginx -y &>>$LOGFILE
+VALIDATE $? "Installing nginx"
+
+systemctl enable nginx &>>$LOGFILE
+VALIDATE $? "enabling nginx"
+
+systemctl start nginx &>>$LOGFILE
+VALIDATE $? "starting nginx"
+
+curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>>$LOGFILE
+VALIDATE $? "Downloading frontend code"
+
+rm-rf /usr/share/nginx/html/* &>>LOGFILE
+ cd /usr/share/nginx/html/
+ unzip /tmp/frontend.zip &>>$LOGFILE
+ VALIDATE $? "Extracting code frontend code"
+
+ cp /home/ec2-user/expense-shell/nginxcong.sh /etc/nginx/default.d/expense.conf &>>$LOGFILE
+ VALIDATE $? "Copying code"
+
+ systemctl restart nginx &>>$LOGFILE
+ VALIDATE $? " Restarting nginx"
+
+
+
