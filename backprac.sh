@@ -27,10 +27,10 @@ VALIDATE(){
     fi
 }
 
-dnf disable nodejs:18 -y &>>$LOGFILE
+dnf module disable nodejs:18 -y &>>$LOGFILE
 VALIDATE $? "disabling nodejs:18"
 
-dnf enable nodejs:20 -y &>>$LOGFILE
+dnf module enable nodejs:20 -y &>>$LOGFILE
 VALIDATE $? "enabling nodejs:20"
 
 dnf insatll noejs -y &>>$LOGFILE
