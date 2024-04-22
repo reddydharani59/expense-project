@@ -4,6 +4,8 @@ USER=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=$SCRIPTNAME.$TIMESTAMP.log
+echo " Enter mysql password"
+read mysql_root_password
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
