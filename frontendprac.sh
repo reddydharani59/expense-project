@@ -8,7 +8,7 @@ Y="\e[32m"
 B="\e[34m"
 D="\e[90m"
 
-if [ id -ne 0 ]
+if [ $USER -ne 0 ]
 then
     echo -e "$y get super user access"
     exit 1

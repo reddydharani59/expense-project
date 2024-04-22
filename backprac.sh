@@ -9,9 +9,10 @@ G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 D="\e[90m"
-if [ USER -ne 0 ]
+if [ $USER -ne 0 ]
 then 
    echo -e " $R Get super user access"
+   exit 1
 else 
     echo -e $Y" you are super user proceed"
 fi
