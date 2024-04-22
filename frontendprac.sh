@@ -1,8 +1,8 @@
 #!/bin/bash
 USER=$(id -u)
-TIMESTAMP=$(DATE +%F-%H-%M-%S)
+TIMESTAMP=$(date +%F-%H-%M-%S)
 SRIPTNAME=$(echo $0 |cut -d "." -f1)
-LOGFILE=TIMESTAMP.SCRIPTNAME.log
+LOGFILE=$TIMESTAMP.$SCRIPTNAME.log
 R="\e[31m"
 Y="\e[32m"
 B="\e[34m"
@@ -11,6 +11,7 @@ D="\e[90m"
 if [ id -ne 0 ]
 then
     echo -e "$y get super user access"
+    exit 1
 else 
     echo -e "$B you are super user proceed"
 fi
