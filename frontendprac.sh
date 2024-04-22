@@ -1,7 +1,7 @@
 #!/bin/bash
-USER=${id -u}
-TIMESTAMP=${DATE +%F-%H-%M-%S}
-SRIPTNAME=${echo $0 |cut -d "." -f1}
+USER=$(id -u)
+TIMESTAMP=$(DATE +%F-%H-%M-%S)
+SRIPTNAME=$(echo $0 |cut -d "." -f1)
 LOGFILE=TIMESTAMP.SCRIPTNAME.log
 R="\e[31m"
 Y="\e[32m"
