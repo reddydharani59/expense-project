@@ -60,7 +60,7 @@ cd /app
 npm install &>>$LOGFILE
 VALIDATE $? "Installing npm"
 
-cp /home/ec2-user/expense-shell/backendservice.sh /etc/systemd/system/backend.service &>>$LOGFILE
+cp /home/ec2-user/expense-project/backendservice.sh /etc/systemd/system/backend.service &>>$LOGFILE
 
 systemctl daemon-reload &>>$LOGFILE
 VALIDATE $? "Daemon reloading"

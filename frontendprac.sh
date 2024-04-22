@@ -41,7 +41,7 @@ rm-rf /usr/share/nginx/html/* &>>LOGFILE
  unzip /tmp/frontend.zip &>>$LOGFILE
  VALIDATE $? "Extracting code frontend code"
 
- cp /home/ec2-user/expense-shell/nginxcong.sh /etc/nginx/default.d/expense.conf &>>$LOGFILE
+ cp /home/ec2-user/expense-project/nginxcong.sh /etc/nginx/default.d/expense.conf &>>$LOGFILE
  VALIDATE $? "Copying code"
 
  systemctl restart nginx &>>$LOGFILE
