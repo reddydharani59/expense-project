@@ -33,7 +33,7 @@ VALIDATE $? "disabling nodejs:18"
 dnf module enable nodejs:20 -y &>>$LOGFILE
 VALIDATE $? "enabling nodejs:20"
 
-dnf insatll noejs -y &>>$LOGFILE
+dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installing nodejs"
 
 id expense &>>$LOGFILE
