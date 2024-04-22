@@ -17,9 +17,10 @@ else
 fi
 
 VALIDATE(){
-    if [ $1 ne 0 ]
+    if [ $1 -ne 0 ]
     then    
         echo -e "$R failed"
+        exit 1
     else
       echo -e ".....$D success"
     fi
